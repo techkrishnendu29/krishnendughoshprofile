@@ -30,7 +30,7 @@ const projects = [
     stack: ["Python (Tkinter)", "MySQL"],
     description: [
       "Automated pharmacy management: sales, inventory, billing (front/back end).",
-      "Secure DB handling and efficient user experience."
+      "Secure DB handling and efficient user experience.",
       "Note : As it is made with Tkinter and Because Tkinter creates desktop windows, and cloud hosting platforms do not have a graphical desktop environment.So we give this output as a Screen Recording"
     ],
     demo: "https://youtu.be/SvEXOa74DF8", // Replace with your actual live demo link
