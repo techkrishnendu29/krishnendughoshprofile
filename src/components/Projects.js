@@ -33,7 +33,7 @@ const projects = [
       "Secure DB handling and efficient user experience."
     ],
     demo: "00", // Replace with your actual live demo link
-    repo: "https://github.com/techkrishnendu29/pharmacymanagementsystem-"
+    repo: "https://github.com/techkrishnendu29/pharmacymanagementsystem"
   }
 ];
 
