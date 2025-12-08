@@ -1,3 +1,5 @@
+/* Certifications component — responsive, accessible title sizing for desktop & mobile */
+
 .certifications {
   display: flex;
   flex-direction: column;
@@ -10,15 +12,16 @@
   align-items: center;
 }
 
+/* Card container (keeps certificate-like aspect) */
 .cert-card {
   perspective: 1600px;
   width: min(99vw, 600px);
-  min-width: 350px;
+  min-width: 320px;
   max-width: 600px;
   aspect-ratio: 1.414/1;
   height: auto;
   border-radius: 22px;
-  box-shadow: 0 12px 48px #b39ddb31;
+  box-shadow: 0 12px 48px rgba(179,157,219,0.19);
   margin-bottom: 1.5rem;
   margin-top: 2.2rem;
 }
@@ -36,12 +39,14 @@
   transform: rotateY(180deg);
 }
 
-.cert-card-front, .cert-card-back {
+/* Both faces */
+.cert-card-front,
+.cert-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 18px;
-  box-shadow: 0 7px 26px #b39ddb13;
+  box-shadow: 0 7px 26px rgba(179,157,219,0.08);
   background: #fff;
   overflow: hidden;
   backface-visibility: hidden;
@@ -50,6 +55,7 @@
   align-items: center;
 }
 
+/* Front face */
 .cert-card-front {
   color: #4527a0;
   text-align: center;
@@ -57,41 +63,53 @@
   z-index: 2;
 }
 
-/* Certificate image */
+/* Certificate image — use contain so the whole certificate is visible */
 .cert-big-img {
   width: 100%;
   height: 390px;
   object-fit: contain;
   border-radius: 22px 22px 0 0;
   background: #ede7f6;
-  box-shadow: 0 6px 24px #b39ddb22;
-  border-bottom: 1px solid #e1bee7;
+  box-shadow: 0 6px 24px rgba(179,157,219,0.13);
+  border-bottom: 1px solid rgba(225,190,231,0.73);
 }
 
-/* Certificate title under the image */
+/* Title area under the image
+   - responsive font-size using clamp
+   - flexible min/max height so long titles wrap neatly
+   - vertically center text for shorter titles */
 .cert-title {
   width: 100%;
-  min-height: 2.6em;
-  max-height: 6em;
-  font-size: 1.22em;
+  /* font-size scales between 0.98rem and 1.28rem depending on viewport */
+  font-size: clamp(0.98rem, 1rem + 0.9vw, 1.28rem);
+  line-height: 1.18;
   font-weight: 700;
-  padding: 1em 1em 0.7em 1em;
+  padding: 0.95em 1rem;
   background: #ede7f6;
   color: #4527a0;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
-  border-top: 1px solid #e1bee7bb;
-  letter-spacing: .02em;
+  border-top: 1px solid rgba(225,190,231,0.73);
+  letter-spacing: 0.01em;
   text-align: center;
   word-break: break-word;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   box-sizing: border-box;
-  display: flex;
+
+  /* allow title area to grow for multi-line titles but keep visual balance */
+  min-height: 2.2em;        /* for single-line titles */
+  max-height: 6.2em;        /* caps extreme growth */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /* show up to 3 lines then allow scroll (mobile) */
+  -webkit-line-clamp: 3;
+  overflow: auto;
   align-items: center;
   justify-content: center;
-  overflow-y: auto;
+  display: flex;
 }
 
+/* Back face */
 .cert-title-back {
   font-size: 1.21em;
   font-weight: 700;
@@ -101,7 +119,7 @@
 
 .cert-card-back {
   transform: rotateY(180deg);
-  background: #90caf9ed;
+  background: #90caf9e0;
   color: #22284e;
   padding: 2em 1.1em 1.1em 1.1em;
   z-index: 3;
@@ -116,14 +134,15 @@
   align-items: flex-start;
 }
 
-.cert-issuer, .cert-date {
-  font-size: 1.03em;
+.cert-issuer,
+.cert-date {
+  font-size: clamp(0.98rem, 0.85rem + 0.8vw, 1.06rem);
   color: #4527a0;
   font-weight: 500;
 }
 
 .cert-desc {
-  font-size: 0.97em;
+  font-size: clamp(0.92rem, 0.7rem + 0.9vw, 1rem);
   color: #22284e;
   margin: 0.5em 0;
 }
@@ -137,7 +156,7 @@
   border-radius: 9px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.01em;
+  font-size: clamp(0.95rem, 0.7rem + 0.9vw, 1.02rem);
   transition: background .16s, color .13s;
 }
 .cert-link:hover {
@@ -145,34 +164,63 @@
   color: #fff;
 }
 
+/* small helper texts */
 .cert-pagination {
   margin-top: 1em;
   color: #333;
-  font-size: 1.11em;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.12rem);
   font-weight: 500;
   letter-spacing: 0.04em;
 }
 .cert-flip-tip {
   margin-top: 0.1em;
-  font-size: 0.97em;
-  color: #4527a09b;
+  font-size: clamp(0.92rem, 0.72rem + 0.6vw, 0.98rem);
+  color: rgba(69,39,160,0.61);
   text-align: center;
 }
 
+/* Responsive adjustments */
 @media (max-width: 1100px) {
-  .cert-card { width: 70vw; min-width: 210px; max-width: 520px; }
-  .cert-big-img { height: 200px; }
-  .cert-title { font-size: 1.06em; padding: 0.8em 0.7em 0.5em 0.7em; }
+  .cert-card { width: 75vw; min-width: 210px; max-width: 520px; }
+  .cert-big-img { height: 220px; }
+  .cert-title {
+    font-size: clamp(1rem, 0.9rem + 1.3vw, 1.16rem);
+    padding: 0.8em 0.8em;
+    -webkit-line-clamp: 3;
+    min-height: 2.4em;
+  }
 }
 
 @media (max-width: 800px) {
-  .cert-card { width: 99vw; min-width: 180px; max-width: 99vw; }
-  .cert-big-img { height: 135px; }
-  .cert-title { font-size: 1em; padding: 0.7em 0.5em 0.4em 0.5em; }
+  .cert-card { width: 95vw; min-width: 170px; max-width: 95vw; }
+  .cert-big-img { height: 180px; }
+  .cert-title {
+    font-size: clamp(0.96rem, 0.85rem + 1.6vw, 1.08rem);
+    padding: 0.7em 0.6em;
+    -webkit-line-clamp: 3;
+    min-height: 2.2em;
+  }
+  .cert-desc { font-size: 0.95rem; }
 }
 
-@media (max-width: 600px) {
-  .cert-card { width: 99vw; min-width: 120px; max-width: 99vw; }
-  .cert-big-img { height: 85px; }
-  .cert-title { font-size: 0.97em; min-height: 1.6em; padding: 0.5em 0.3em 0.3em 0.3em; }
+@media (max-width: 480px) {
+  .cert-card { width: 98vw; min-width: 140px; max-width: 98vw; }
+  .cert-big-img { height: 140px; }
+  .cert-title {
+    font-size: clamp(0.9rem, 0.85rem + 2.2vw, 1rem);
+    padding: 0.6em 0.5em;
+    -webkit-line-clamp: 4;  /* allow one more line on narrow screens */
+    min-height: 2.6em;
+  }
+  .cert-desc { font-size: 0.92rem; }
 }
+
+/* Accessibility: focus state for keyboard users */
+.cert-card:focus {
+  outline: 3px solid rgba(25,118,210,0.18);
+  outline-offset: 6px;
+}
+
+/* Ensure scrollbars on title area are subtle */
+.cert-title::-webkit-scrollbar { height: 6px; }
+.cert-title::-webkit-scrollbar-thumb { background: rgba(69,39,160,0.12); border-radius: 4px; }

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Education.css';
 const Education = () => (
   <section className="education">
     <h2>Education</h2>
@@ -10,7 +10,7 @@ const Education = () => (
         <br />GPA: 7.22 (Till 4th Semester)
       </li>
       <li>
-        <strong>PCM & CS, 2023</strong>
+        <strong>Higher Secondary Education,PCM & CS, 2023</strong>
         <br />Uttarpara Amarendra Vidyapith (WBCHSE Board)
         <br />Percentage: 61.6%
       </li>

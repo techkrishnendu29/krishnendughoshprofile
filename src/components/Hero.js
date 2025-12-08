@@ -1,38 +1,41 @@
 import React from 'react';
-import { FaEnvelope, FaLinkedin, FaGithub, FaPhone } from 'react-icons/fa';
+import './Hero.css';
 
 const Hero = () => (
-  <section className="hero">
-    <img 
-      src="/Dp.png" 
-      alt="Krishnendu Ghosh" 
-      className="avatar" 
-    />
-    <h1>KRISHNENDU GHOSH</h1>
-    <p>AI &amp; ML Enthusiast | Web &amp; App Developer</p>
-    <div className="social-links">
-      <a href="mailto:techkrishnendu29@gmail.com" aria-label="Email">
-        <FaEnvelope />
-      </a>
-      <a href="https://linkedin.com/in/krishnendu29" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <FaLinkedin />
-      </a>
-      <a href="https://github.com/techkrishnendu29" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-        <FaGithub />
-      </a>
-      <a href="tel:+918910548537" aria-label="Phone">
-        <FaPhone />
-      </a>
+  <div className="hero section-wrapper">
+    <div className="hero-card">
+      <div className="hero-left">
+        <h1 className="hero-title">Krishnendu Ghosh</h1>
+        <p className="hero-sub">
+          Software Developer • Android Developer • Machine Learning Enthusiast • Lifelong learner.
+        </p>
+
+        {/* Buttons */}
+        <div className="hero-actions">
+          <a
+            href="/CV.pdf"
+            className="btn-primary"
+            download
+          >
+            Download CV
+          </a>
+
+          <a
+            href="/CV.pdf"
+            className="btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View CV
+          </a>
+        </div>
+      </div>
+
+      <div className="hero-right">
+        <img className="hero-photo" src="DP.png" alt="Krishnendu Ghosh" />
+      </div>
     </div>
-    <a 
-      href="/CV.pdf" 
-      className="resume-btn" 
-      target="_blank" 
-      rel="noopener noreferrer"
-    >
-      Download Resume
-    </a>
-  </section>
+  </div>
 );
 
 export default Hero;

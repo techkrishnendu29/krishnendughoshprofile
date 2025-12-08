@@ -1,16 +1,19 @@
 import React from "react";
-import { FaJava } from "react-icons/fa";
-import {
-  SiPython, SiCplusplus, SiJavascript, SiMysql, SiPostgresql,
+import { 
+  SiPython, SiC,SiCplusplus, SiJavascript, SiMysql, SiPostgresql,
   SiFirebase, SiReact, SiFlutter, SiAndroid, SiStreamlit, SiGit, SiDocker,
   SiRedux, SiHtml5, SiCss3, SiTensorflow
 } from "react-icons/si";
+import { DiJava } from "react-icons/di"; // Java icon from Devicons
+
+import './Skills.css';
 
 const skills = [
   { name: "Python", icon: <SiPython color="#3776AB" /> },
+  { name: "C", icon: <SiC color="#00599C" /> },
   { name: "C++", icon: <SiCplusplus color="#00599C" /> },
   { name: "JavaScript", icon: <SiJavascript color="#F7DF1E" /> },
-  { name: "Java", icon: <FaJava color="#E76F00" /> },
+  { name: "Java", icon: <DiJava color="#E76F00" /> },
   { name: "React", icon: <SiReact color="#61DBFB" /> },
   { name: "HTML5", icon: <SiHtml5 color="#E44D26" /> },
   { name: "CSS3", icon: <SiCss3 color="#264DE4" /> },
@@ -31,7 +34,7 @@ const Skills = () => (
     <div className="skills-grid">
       {skills.map((skill, idx) => (
         <div className="skill-cell" key={idx}>
-          <span className="skill-logo">{skill.icon}</span>
+          <span className="skill-logo" aria-hidden="true">{skill.icon}</span>
           <span className="skill-name">{skill.name}</span>
         </div>
       ))}
