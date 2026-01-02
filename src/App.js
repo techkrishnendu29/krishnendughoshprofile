@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import { Analytics } from '@vercel/analytics/react';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div className="app-root">
+      <Analytics />
       
       {/* Background video */}
       <video className="bg-video" src="/videos/code-bg.mp4" autoPlay muted loop playsInline />
