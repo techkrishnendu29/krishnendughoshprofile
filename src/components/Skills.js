@@ -1,8 +1,7 @@
 import React from "react";
 import { 
   SiPython, SiC,SiCplusplus, SiJavascript, SiMysql, SiPostgresql,
-  SiFirebase, SiReact, SiFlutter, SiAndroid, SiStreamlit, SiGit, SiDocker,
-  SiRedux, SiHtml5, SiCss3, SiTensorflow
+  SiFirebase, SiReact, SiFlutter, SiAndroid, SiStreamlit, SiGit, SiDocker, SiHtml5, SiCss3, SiTensorflow
 } from "react-icons/si";
 import { DiJava } from "react-icons/di"; // Java icon from Devicons
 
