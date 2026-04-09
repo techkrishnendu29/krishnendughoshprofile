@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import { Analytics } from '@vercel/analytics/react';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -62,6 +63,8 @@ function App() {
 
         <Footer />
       </main>
+
+      <Analytics />
     </div>
   );
 }
