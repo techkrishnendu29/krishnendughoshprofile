@@ -3,37 +3,48 @@ import './Projects.css';
 
 const projects = [
   {
-    title: "Web Compiler for Pattern Recognition and Machine Learning Labs",
-    date: "Ongoing",
-    stack: ["Python", "Scikit-learn", "Firebase", "AWS", "Docker"],
+    title: "OncoScan XAI – Explainable Multi-Modal Transfer Learning Framework for AI-Assisted Breast Cancer Detection",
+    date: "Currently Working",
     description: [
-      "Web compiler for AI/ML algorithms with pre-installed frameworks, auto-imported libraries, and zero-config setup.",
-      "Sandboxed, cloud execution for scalable, safe, real-time code labs."
+      "Coming Soon"
+      "Note : Group Project"
     ],
-    demo: "00", // Replace with your actual live demo link
-    repo: "https://github.com/techkrishnendu29/webcompiler"
   },
-    {
-    title: "Web Compiler for Pattern Recognition and Machine Learning Labs",
-    date: "Ongoing",
-    stack: ["Python", "Scikit-learn", "Firebase", "AWS", "Docker"],
+  
+  {
+    title: " TextSage AI – Intelligent Text Summarization Tool",
+    date: "Feb 2026",
+    stack: [" Flutter","Firebase", "Python", "REST API"],
     description: [
-      "Web compiler for AI/ML algorithms with pre-installed frameworks, auto-imported libraries, and zero-config setup.",
-      "Sandboxed, cloud execution for scalable, safe, real-time code labs."
+      "Engineered a scalable NLP platform for real-time text summarization and sentiment analysis" 
+      "Supporting applications in document processing, review analysis, and research assistance."
     ],
-    demo: "00", // Replace with your actual live demo link
-    repo: "https://github.com/techkrishnendu29/webcompiler"
+    demo: "https://textsage.krishnendughosh.in/", // Replace with your actual live demo link
+    repo: "https://github.com/techkrishnendu29/aitextsummary"
   },
   {
-    title: "AI-Enabled Smart Waste Management & Route Optimization (Android App)",
+    title: " CleanRoute An AI-Enabled Smart Waste Management & Route Optimization (Android App)",
     date: "Nov 2025",
-    stack: ["Java", "Firebase", "Flutter", "Google Maps API", "AI Algorithms"],
+    stack: [" Flutter","Firebase", "Python", "REST API"],
     description: [
       "AI-based solution for urban waste collection route optimization.",
       "Vehicle tracking with Google Maps API; real-time data sync and sustainability focus."
+
     ],
     demo: "00", // Replace with your actual live demo link
     repo: "https://github.com/techkrishnendu29/cleanroute"
+  },
+  {
+    title: " AgriVision – AI-Driven Precision Agriculture Monitoring Platform-Android App",
+    date: "Sept 2025",
+    stack: ["Python", "FastAPI", "Flutter", "Firebase", "MATLAB", "CNN", "LSTM", "Google Earth Engine","OpenWeather API"],
+    description: [
+     "Built a precision agriculture system using hyperspectral imaging, sensor data, and weather APIs with CNN/LSTM models."
+      "For crop health and pest prediction, supported by a FastAPI backend and Flutter app delivering real-time farm insights."
+      "Note : Group Project"
+    ],
+    demo: "https://youtu.be/IPtR71QSoNQ?si=8JtALBTccIN6ZNhX", // Replace with your actual live demo link
+    repo: "https://github.com/techkrishnendu29/AgriVision"
   },
   {
     title: "Web Based Pharmacy Management System",
