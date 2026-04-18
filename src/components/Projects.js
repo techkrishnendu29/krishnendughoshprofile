@@ -77,7 +77,7 @@ const Projects = () => (
 
           {/* tech stack as chips */}
           <div className="project-tech" style={{marginTop: '10px', display: 'flex', gap: '8px', flexWrap: 'wrap'}}>
-            {p.stack.map((tech, tIdx) => (
+              {p.stack && p.stack.map((tech, tIdx) => (
               <span className="tech-chip" key={tIdx} style={{
                 background: 'linear-gradient(90deg,#00e0a1,#00b3ff)',
                 color: '#07102a',
