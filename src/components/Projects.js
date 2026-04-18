@@ -13,6 +13,17 @@ const projects = [
     demo: "00", // Replace with your actual live demo link
     repo: "https://github.com/techkrishnendu29/webcompiler"
   },
+    {
+    title: "Web Compiler for Pattern Recognition and Machine Learning Labs",
+    date: "Ongoing",
+    stack: ["Python", "Scikit-learn", "Firebase", "AWS", "Docker"],
+    description: [
+      "Web compiler for AI/ML algorithms with pre-installed frameworks, auto-imported libraries, and zero-config setup.",
+      "Sandboxed, cloud execution for scalable, safe, real-time code labs."
+    ],
+    demo: "00", // Replace with your actual live demo link
+    repo: "https://github.com/techkrishnendu29/webcompiler"
+  },
   {
     title: "AI-Enabled Smart Waste Management & Route Optimization (Android App)",
     date: "Nov 2025",
