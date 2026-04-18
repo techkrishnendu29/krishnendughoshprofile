@@ -3,7 +3,7 @@ import './Projects.css';
 
 const projects = [
   {
-    title: "OncoScan XAI – Explainable Multi-Modal Transfer Learning Framework for AI-Assisted Breast Cancer Detection",
+    title: "OncoScan XAI – An Explainable Multi-Modal Transfer Learning Framework for AI-Assisted Breast Cancer Detection",
     date: "Currently Working",
     description: [
       "Coming Soon",
