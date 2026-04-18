@@ -6,7 +6,7 @@ const projects = [
     title: "OncoScan XAI – Explainable Multi-Modal Transfer Learning Framework for AI-Assisted Breast Cancer Detection",
     date: "Currently Working",
     description: [
-      "Coming Soon"
+      "Coming Soon",
       "Note : Group Project"
     ],
   },
@@ -16,7 +16,7 @@ const projects = [
     date: "Feb 2026",
     stack: [" Flutter","Firebase", "Python", "REST API"],
     description: [
-      "Engineered a scalable NLP platform for real-time text summarization and sentiment analysis" 
+      "Engineered a scalable NLP platform for real-time text summarization and sentiment analysis" ,
       "Supporting applications in document processing, review analysis, and research assistance."
     ],
     demo: "https://textsage.krishnendughosh.in/", // Replace with your actual live demo link
@@ -29,7 +29,6 @@ const projects = [
     description: [
       "AI-based solution for urban waste collection route optimization.",
       "Vehicle tracking with Google Maps API; real-time data sync and sustainability focus."
-
     ],
     demo: "00", // Replace with your actual live demo link
     repo: "https://github.com/techkrishnendu29/cleanroute"
@@ -39,8 +38,8 @@ const projects = [
     date: "Sept 2025",
     stack: ["Python", "FastAPI", "Flutter", "Firebase", "MATLAB", "CNN", "LSTM", "Google Earth Engine","OpenWeather API"],
     description: [
-     "Built a precision agriculture system using hyperspectral imaging, sensor data, and weather APIs with CNN/LSTM models."
-      "For crop health and pest prediction, supported by a FastAPI backend and Flutter app delivering real-time farm insights."
+     "Built a precision agriculture system using hyperspectral imaging, sensor data, and weather APIs with CNN/LSTM models.",
+      "For crop health and pest prediction, supported by a FastAPI backend and Flutter app delivering real-time farm insights.",
       "Note : Group Project"
     ],
     demo: "https://youtu.be/IPtR71QSoNQ?si=8JtALBTccIN6ZNhX", // Replace with your actual live demo link
