@@ -14,7 +14,7 @@ const projects = [
   {
     title: " TextSage AI – Intelligent Text Summarization Tool",
     date: "Feb 2026",
-    stack: [" Flutter","Firebase", "Python", "REST API"],
+    stack: ["React.js", "Tailwind CSS", "Python","Node.js", "FastAPI", "REST API "],
     description: [
       "Engineered a scalable NLP platform for real-time text summarization and sentiment analysis" ,
       "Supporting applications in document processing, review analysis, and research assistance."
