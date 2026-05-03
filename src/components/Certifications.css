@@ -1,153 +1,224 @@
-import React, { useState, useEffect } from "react";
-import "./Certifications.css";
+.certifications {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-const certifications = [
-  {
-    title: "English Language for Competitive Exams",
-    image: "/certifications/2.png",
-    issuer: "NPTEL (IITM)",
-    date: "APRIL 2024",
-    description:
-      "An online course focused on competitive English comprehension, grammar, and communication.",
-    link:
-      "https://nptel.ac.in/noc/E_Certificate/NPTEL24HS73S105970095030767325"
-  },
-  {
-    title: "Ethics in Engineering Practice",
-    image: "/certifications/4.png",
-    issuer: "NPTEL (IITKGP)",
-    date: "APRIL 2024",
-    description:
-      "Focuses on ethical dilemmas and professional responsibility.",
-    link:
-      "https://nptel.ac.in/noc/E_Certificate/NPTEL24MG17S65970153130767325"
-  },
-  {
-    title: "Communication in the 21st Century Workplace",
-    image: "/certifications/1.png",
-    issuer: "Coursera (UOC, IRVINE)",
-    date: "MAY 2024",
-    description:
-      "Advanced communication and collaboration skills.",
-    link: "https://coursera.org/verify/Y8CDXPFPN5ZN"
-  },
-  {
-    title: "Enhancing Soft Skills and Personality",
-    image: "/certifications/3.png",
-    issuer: "NPTEL (IITK)",
-    date: "APRIL 2024",
-    description:
-      "Leadership, teamwork, and personality development.",
-    link:
-      "https://nptel.ac.in/noc/E_Certificate/NPTEL24HS26S45970125130767325"
-  },
-  {
-    title: "Introduction To Internet Of Things",
-    image: "/certifications/5.png",
-    issuer: "NPTEL (IITKGP)",
-    date: "NOV 2024",
-    description:
-      "IoT principles and Industry 4.0 applications.",
-    link:
-      "https://nptel.ac.in/noc/E_Certificate/NPTEL24CS115S85230181104357575"
-  },
-  {
-    title: "Introduction To Machine Learning",
-    image: "/certifications/6.png",
-    issuer: "Duke University",
-    date: "NOV 2024",
-    description:
-      "Machine learning fundamentals and AI use cases.",
-    link: "https://coursera.org/verify/7906UN0771RK"
+.cert-carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Card container (keeps certificate-like aspect) */
+.cert-card {
+  perspective: 1600px;
+  width: min(99vw, 600px);
+  min-width: 320px;
+  max-width: 600px;
+  aspect-ratio: 1.414/1;
+  height: auto;
+  border-radius: 22px;
+  box-shadow: 0 12px 48px rgba(179,157,219,0.19);
+  margin-bottom: 1.5rem;
+  margin-top: 2.2rem;
+}
+
+.cert-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  transition: transform 0.68s cubic-bezier(.41,.09,.47,.99);
+  transform-style: preserve-3d;
+}
+
+.cert-card.flipped .cert-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Both faces */
+.cert-card-front,
+.cert-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  box-shadow: 0 7px 26px rgba(179,157,219,0.08);
+  background: #fff;
+  overflow: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Front face */
+.cert-card-front {
+  color: #4527a0;
+  text-align: center;
+  padding: 0;
+  z-index: 2;
+}
+
+/* Certificate image — use contain so the whole certificate is visible */
+.cert-big-img {
+  width: 100%;
+  height: 390px;
+  object-fit: contain;
+  border-radius: 22px 22px 0 0;
+  background: #ede7f6;
+  box-shadow: 0 6px 24px rgba(179,157,219,0.13);
+  border-bottom: 1px solid rgba(225,190,231,0.73);
+}
+
+/* Title area under the image
+   - responsive font-size using clamp
+   - flexible min/max height so long titles wrap neatly
+   - vertically center text for shorter titles */
+.cert-title {
+  width: 100%;
+  /* font-size scales between 0.98rem and 1.28rem depending on viewport */
+  font-size: clamp(0.98rem, 1rem + 0.9vw, 1.28rem);
+  line-height: 1.18;
+  font-weight: 700;
+  padding: 0.95em 1rem;
+  background: #ede7f6;
+  color: #4527a0;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border-top: 1px solid rgba(225,190,231,0.73);
+  letter-spacing: 0.01em;
+  text-align: center;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+
+  /* allow title area to grow for multi-line titles but keep visual balance */
+  min-height: 2.2em;        /* for single-line titles */
+  max-height: 6.2em;        /* caps extreme growth */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /* show up to 3 lines then allow scroll (mobile) */
+  -webkit-line-clamp: 3;
+  overflow: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+/* Back face */
+.cert-title-back {
+  font-size: 1.21em;
+  font-weight: 700;
+  color: #3700b3;
+  margin-bottom: 0.55em;
+}
+
+.cert-card-back {
+  transform: rotateY(180deg);
+  background: #90caf9e0;
+  color: #22284e;
+  padding: 2em 1.1em 1.1em 1.1em;
+  z-index: 3;
+}
+
+.cert-back-content {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  align-items: flex-start;
+}
+
+.cert-issuer,
+.cert-date {
+  font-size: clamp(0.98rem, 0.85rem + 0.8vw, 1.06rem);
+  color: #4527a0;
+  font-weight: 500;
+}
+
+.cert-desc {
+  font-size: clamp(0.92rem, 0.7rem + 0.9vw, 1rem);
+  color: #22284e;
+  margin: 0.5em 0;
+}
+
+.cert-link {
+  display: inline-block;
+  margin-top: 0.45em;
+  color: #fff;
+  background: #673ab7;
+  padding: 0.27em 1.18em;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: clamp(0.95rem, 0.7rem + 0.9vw, 1.02rem);
+  transition: background .16s, color .13s;
+}
+.cert-link:hover {
+  background: #0277bd;
+  color: #fff;
+}
+
+/* small helper texts */
+.cert-pagination {
+  margin-top: 1em;
+  color: #333;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.12rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.cert-flip-tip {
+  margin-top: 0.1em;
+  font-size: clamp(0.92rem, 0.72rem + 0.6vw, 0.98rem);
+  color: rgba(69,39,160,0.61);
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .cert-card { width: 75vw; min-width: 210px; max-width: 520px; }
+  .cert-big-img { height: 220px; }
+  .cert-title {
+    font-size: clamp(1rem, 0.9rem + 1.3vw, 1.16rem);
+    padding: 0.8em 0.8em;
+    -webkit-line-clamp: 3;
+    min-height: 2.4em;
   }
-];
+}
 
-const Certifications = () => {
-  const [current, setCurrent] = useState(0);
-  const [flipped, setFlipped] = useState(false);
-  const [fade, setFade] = useState(true);
+@media (max-width: 800px) {
+  .cert-card { width: 95vw; min-width: 170px; max-width: 95vw; }
+  .cert-big-img { height: 180px; }
+  .cert-title {
+    font-size: clamp(0.96rem, 0.85rem + 1.6vw, 1.08rem);
+    padding: 0.7em 0.6em;
+    -webkit-line-clamp: 3;
+    min-height: 2.2em;
+  }
+  .cert-desc { font-size: 0.95rem; }
+}
 
-  // Auto change with fade animation
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false); // fade out first
+@media (max-width: 480px) {
+  .cert-card { width: 98vw; min-width: 140px; max-width: 98vw; }
+  .cert-big-img { height: 140px; }
+  .cert-title {
+    font-size: clamp(0.9rem, 0.85rem + 2.2vw, 1rem);
+    padding: 0.6em 0.5em;
+    -webkit-line-clamp: 4;  /* allow one more line on narrow screens */
+    min-height: 2.6em;
+  }
+  .cert-desc { font-size: 0.92rem; }
+}
 
-      setTimeout(() => {
-        setCurrent((prev) => (prev + 1) % certifications.length);
-        setFlipped(false);
-        setFade(true); // fade in
-      }, 300);
-    }, 3000);
+/* Accessibility: focus state for keyboard users */
+.cert-card:focus {
+  outline: 3px solid rgba(25,118,210,0.18);
+  outline-offset: 6px;
+}
 
-    return () => clearInterval(interval);
-  }, []);
-
-  const cert = certifications[current];
-
-  return (
-    <section className="certifications">
-      <h2>Certifications</h2>
-
-      <div className="cert-carousel-wrapper">
-        <div
-          className={`cert-card ${flipped ? "flipped" : ""}`}
-          style={{
-            transition: "opacity 0.4s ease, transform 0.4s ease",
-            opacity: fade ? 1 : 0,
-            transform: fade ? "scale(1)" : "scale(0.95)"
-          }}
-          onMouseEnter={() => setFlipped(true)}
-          onMouseLeave={() => setFlipped(false)}
-          tabIndex={0}
-        >
-          <div className="cert-card-inner">
-            
-            {/* FRONT */}
-            <div className="cert-card-front">
-              <img
-                src={cert.image}
-                alt={cert.title}
-                className="cert-big-img"
-              />
-              <div className="cert-title">{cert.title}</div>
-            </div>
-
-            {/* BACK */}
-            <div className="cert-card-back">
-              <div className="cert-back-content">
-                <div className="cert-title-back">{cert.title}</div>
-                <div className="cert-issuer">
-                  <strong>Issuer:</strong> {cert.issuer}
-                </div>
-                <div className="cert-date">
-                  <strong>Date:</strong> {cert.date}
-                </div>
-                <div className="cert-desc">{cert.description}</div>
-
-                <a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cert-link"
-                >
-                  View Credential
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div className="cert-pagination">
-          {current + 1} / {certifications.length}
-        </div>
-
-        <div className="cert-flip-tip">
-          Hover to view certificate details.
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default Certifications;
+/* Ensure scrollbars on title area are subtle */
+.cert-title::-webkit-scrollbar { height: 6px; }
+.cert-title::-webkit-scrollbar-thumb { background: rgba(69,39,160,0.12); border-radius: 4px; }
