@@ -41,8 +41,8 @@ const Contact = () => {
 
             <div className="contact-socials">
                         
-  <a className="contact-item" href="mailto:techkrishnendu29@gmail.com">
-    <FaEnvelope className="contact-icon" /> <span>techkrishnendu29@gmail.com</span>
+  <a className="contact-item" href="mailto:contact@krishnendughosh.in">
+    <FaEnvelope className="contact-icon" /> <span>contact@krishnendughosh.in</span>
   </a>
 
   <a className="contact-item" href="tel:+918910545837">
