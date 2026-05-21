@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Contact.css';
 import { FaPhone, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 
-const CONTACT_EMAIL = 'techkrishnendu29@gmail.com'; // replace with real email
+const CONTACT_EMAIL = 'info@krishnendughosh.in'; // replace with real email
 
 const Contact = () => {
   const [status, setStatus] = useState('');
