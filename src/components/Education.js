@@ -7,7 +7,7 @@ const Education = () => (
       <li>
         <strong>B.Tech in Computer Science (AI & ML), 2027</strong>
         <br />Supreme Knowledge Foundation Group of Institutions (MAKAUT, WB), Hooghly
-        <br />GPA: 7.22 (Till 4th Semester)
+        <br />GPA: 7.45 (Till 5th Semester)
       </li>
       <li>
         <strong>Higher Secondary Education,PCM & CS, 2023</strong>
